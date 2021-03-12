@@ -1,0 +1,79 @@
+@import '../base/colors';
+@import '../base/typography';
+@import '../utils/image-rendering';
+
+.header {
+    position: relative;
+    font-family: $POPPINS;
+
+    &__img {
+        width: 100vw;
+        height: 100vh;
+
+        @include image-render;
+    }
+
+    &__text {
+        position: absolute;
+        transform: translate(-50%, -50%);
+        top: 50%;
+        left: 50%;
+        width: 80vw;
+        text-align: center;
+    }
+
+    &__title {
+        color: $WHITE;
+
+    }
+
+    &__synopsis {
+        color: $WHITE;
+        font-family: $POPPINS;
+        line-height: 1.6;
+        text-align: justify;
+        font-size: clamp(1rem, 4vw, 1.4rem);
+    }
+
+    &__button {
+        border-radius: 20px;
+        background: #ea8d2c;
+        padding: 10px;
+        width: 35vw;
+        color: $WHITE;
+        font-weight: bold;
+        border: none;
+        text-transform: uppercase;
+    }
+}
+
+// ipad 
+@media only screen and(min-width: 768px) {
+    .header {
+        overflow: hidden;
+
+        &__title {
+            font-size: 2.6rem;
+        }
+
+        &__button {
+            max-width: 20vw;
+        }
+    }
+}
+
+// desktop
+@media only screen and(min-width: 1025px) {
+    .header {
+        &__text {
+            width: 40%;
+            left: 25%;
+            top: 60%;
+            transform: translate(-50%, -50%);
+        }
+
+        &__button {
+            max-width: 15vw;
+        }
+    }
+}

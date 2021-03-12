@@ -1,0 +1,17 @@
+@import '../base/colors';
+@import '../base/typography';
+
+.navbar {
+    display: flex;
+    background: $BLACK;
+    color: $WHITE;
+    font-family: $NOTO-SANS;
+
+    &__title {
+        align-self: center;
+        font-size: clamp(1rem, 7vw, 2rem);
+        margin: 1rem;
+    }
+
+
+}

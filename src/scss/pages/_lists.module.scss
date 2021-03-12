@@ -1,0 +1,155 @@
+@import '../base/colors';
+@import '../base/typography';
+
+.container {
+    h1 {
+        font-family: $POPPINS;
+        text-align: center;
+
+    }
+
+    &__content {
+        display: flex;
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        // to prevent the button to destroy the layout
+        position: relative;
+
+        &::-webkit-scrollbar {
+            display: none;
+        }
+
+    }
+
+
+    &__lists {
+        box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.6);
+        margin: 1rem;
+        border-radius: 20px;
+    }
+
+    &__img {
+        border-radius: 20px;
+        flex: 0 0 auto;
+        // to remove excess padding bottom
+        display: block;
+        image-rendering: crisp-edges;
+        width: 50vw;
+        height: 50vh;
+    }
+
+    &__button {
+        display: none;
+    }
+
+    // display button when hover
+    &__img:hover+&__button,
+    &__button:hover {
+        display: block;
+        transform: translate(2.5rem, -12rem);
+        position: absolute;
+        padding: 20px;
+        background-color: transparent;
+        border-radius: 20px;
+        border: 4px solid #ea8d2c;
+        font-weight: bold;
+        color: $WHITE;
+        font-family: $POPPINS;
+        text-transform: uppercase;
+        text-align: center;
+
+    }
+
+
+    &__img:hover {
+        filter: blur(1.6px);
+        animation: ease-in-out;
+    }
+
+    &__pagination {
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        list-style: none;
+        width: 80vw;
+
+    }
+
+    &__paginationLink {
+        border: 2px solid #ea8d2c;
+        border-radius: 5px;
+        padding: 5px;
+
+        // modifier
+        &__active {
+            background-color: #EB9235;
+            color: $WHITE;
+            font-family: $NOTO-SANS;
+        }
+    }
+}
+
+@media only screen and(min-width:768px) {
+    .container {
+        display: flex;
+
+        h1 {
+            flex: 40%;
+        }
+
+        &__content {
+            &__img {
+                width: 25vw;
+                height: 30vh;
+            }
+        }
+
+        // display button when hover
+        &__img:hover+&__button,
+        &__button:hover {
+            transform: translate(8rem, -18rem);
+        }
+
+        &__pagination {
+            flex: 60%;
+
+        }
+
+        &__paginationLink {
+            margin: 0 0.5rem;
+        }
+
+    }
+}
+
+
+@media only screen and(min-width:1025px) {
+    .container {
+        h1 {
+            flex: 1%;
+        }
+
+
+        &__img {
+            width: 15vw;
+            height: 30vh;
+        }
+
+        // display button when hover
+        &__img:hover+&__button,
+        &__button:hover {
+            transform: translate(6rem, -11rem);
+        }
+
+        &__pagination {
+            justify-content: flex-end;
+            width: 94vw;
+
+        }
+
+        &__paginationLink {
+            margin: 0 0.5rem;
+        }
+
+    }
+}

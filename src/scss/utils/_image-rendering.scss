@@ -1,0 +1,6 @@
+// prevents image to be pixelated
+@mixin image-render {
+    image-rendering: auto;
+    image-rendering: crisp-edges;
+    image-rendering: pixelated;
+}

@@ -1,0 +1,16 @@
+// use functions to return value
+
+// use mixins if you have a redundant code
+
+// use extends if you want to extend something
+
+// layouts
+@use 'layouts/header';
+@use 'layouts/navbar';
+
+
+// modules
+@use 'pages/lists.module';
+
+// components
+@use 'components/customModal.module';
